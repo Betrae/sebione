@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <script>
+    function modify_info(id, name, email, logo, website) {
+    document.getElementById('edit_company_name').value = name;
+    document.getElementById('edit_company_email').value = email;
+    document.getElementById('edit_logo').value = logo;
+    document.getElementById('edit_company_website').value = website;
+    document.getElementById('btn_edit_submit').formAction = "/dashboard/edit/" + id;
+    }
     function deleteData(id) {
     document.getElementById('btn_delete_submit').formAction = "/dashboard/delete/"+id;
     }

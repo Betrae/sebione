@@ -38,6 +38,25 @@ class DashboardController extends Controller
         return redirect('dashboard');
     }
 
+    public function update(Request $request, $id)
+    {
+        request()->validate([
+            'edit_company_name' => 'required',
+            'edit_company_email' => 'required|email',
+            'edit_logo' => 'required',
+            'edit_company_website' => 'required',
+        ]);
+
+        Company::where('id', $id)->update([
+            'name' => request('edit_company_name'),
+            'email' => request('edit_company_email'),
+            'website' => request('edit_company_website'),
+            'logo' => UploadImage::upload($request, 'edit_logo')
+        ]);
+
+        return redirect('dashboard');
+    }
+
     public function destroy($id) {
         Company::where('id', $id)->delete();
 

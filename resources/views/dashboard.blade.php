@@ -28,7 +28,9 @@
                         <td>{{$company->email}}</td>
                         <td><a href="{{$company->website}}">{{$company->website}}</a></td>
                         <td nowrap="">
-                            <a href="#" class="btn btn-info edit_company" data-toggle="modal" data-target="#editCompany" value="{{ $company->id }}">
+                            <a href="#" class="btn btn-info edit_company" data-toggle="modal" data-target="#editCompany" 
+                            onlick="modify_info('{{$company->id}}','{{$company->name}}','{{$company->email}}','{{$company->logo}}',
+                            '{{$company->website}}')">
                                 <i class="fa fa-edit"></i>
                             </a>
 
@@ -37,6 +39,7 @@
                             </a>
                         </td>
                     </tr>
+                    @include('layouts.modals.companies.edit')
                 @endforeach
         </tbody>
     </table>
