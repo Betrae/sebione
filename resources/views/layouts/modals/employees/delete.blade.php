@@ -1,8 +1,8 @@
-<div class="modal fade" id="deleteCompany" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="deleteEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="/dashboard" method="POST">
+            <form action="" method="POST">
                 @csrf
                 @method('delete')
                 <div class="modal-header">
@@ -16,8 +16,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success" name="btn_delete_submit"
-                        id="btn_delete_submit">Submit</button>
+                    <button type="submit" class="btn btn-success" name="btn_delete_submit_emp"
+                        id="btn_delete_submit_emp">Submit</button>
                 </div>
             </form>
         </div>

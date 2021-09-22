@@ -6,9 +6,10 @@
 <div class="container-fluid">
     <div class="d-flex justify-content-between my-5">
         <h2 class="font-weight-light">List of Companies</h2>
-        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#createCompany">Add new Company</button>
+        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#createCompany">Add new
+            Company</button>
     </div>
-    <table id="dataTable" class="table table-striped table-bordered p-2" style="width:100%">
+    <table id="dataTable" class="table table-striped table-bordered p-2 text-center" style="width:100%">
         <thead>
             <tr>
                 <th>Logo</th>
@@ -20,30 +21,30 @@
         </thead>
         <tbody>
             @foreach($companies as $company)
-                    <tr>
-                        <td>
-                            <div class="m-r-10"><img src="/storage/logo/{{$company->logo}}" alt="user" class="rounded" width="45"></div>
-                        </td>
-                        <td>{{$company->name}}</td>
-                        <td>{{$company->email}}</td>
-                        <td><a href="{{$company->website}}">{{$company->website}}</a></td>
-                        <td nowrap="">
-                            <a href="#" class="btn btn-info edit_company" data-toggle="modal" data-target="#editCompany" 
-                            onlick="modify_info('{{$company->id}}','{{$company->name}}','{{$company->email}}','{{$company->logo}}',
+            <tr>
+                <td>
+                    <div class="m-r-10"><img src="/storage/logo/{{$company->logo}}" alt="user" class="rounded"
+                            width="45"></div>
+                </td>
+                <td>{{$company->name}}</td>
+                <td>{{$company->email}}</td>
+                <td><a href="{{$company->website}}">{{$company->website}}</a></td>
+                <td nowrap="">
+                    <a href="#" class="btn btn-info edit_company" data-toggle="modal" data-target="#editCompany"
+                        onclick="modify_info('{{$company->id}}','{{$company->name}}','{{$company->email}}','{{$company->logo}}',
                             '{{$company->website}}')">
-                                <i class="fa fa-edit"></i>
-                            </a>
+                        <i class="fa fa-edit"></i>
+                    </a>
 
-                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteCompany" onclick="deleteData('{{$company->id}}')">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    @include('layouts.modals.companies.edit')
-                @endforeach
+                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteCompany"
+                        onclick="deleteData('{{$company->id}}')">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            @include('layouts.modals.companies.edit')
+            @endforeach
         </tbody>
     </table>
 </div>
 @endsection
-
-

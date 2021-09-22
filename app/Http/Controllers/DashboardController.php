@@ -50,13 +50,15 @@ class DashboardController extends Controller
         Company::where('id', $id)->update([
             'name' => request('edit_company_name'),
             'email' => request('edit_company_email'),
+            'logo' => UploadImage::upload($request, 'edit_logo'),
             'website' => request('edit_company_website'),
-            'logo' => UploadImage::upload($request, 'edit_logo')
+            
         ]);
 
         return redirect('dashboard');
     }
 
+    /*Delete function for companies */
     public function destroy($id) {
         Company::where('id', $id)->delete();
 

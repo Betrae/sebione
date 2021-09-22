@@ -12,15 +12,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <script>
-    function modify_info(id, name, email, logo, website) {
-    document.getElementById('edit_company_name').value = name;
-    document.getElementById('edit_company_email').value = email;
-    document.getElementById('edit_logo').value = logo;
-    document.getElementById('edit_company_website').value = website;
-    document.getElementById('btn_edit_submit').formAction = "/dashboard/edit/" + id;
+
+    /*Function for update company and employees*/
+    
+    function modify_emp(id, company_id, first_name, last_name, email, phone) {
+    document.getElementById('edit_company_name').value = company_id;
+    document.getElementById('edit_first_name').value = first_name;
+    document.getElementById('edit_last_name').value = last_name;
+    document.getElementById('edit_email').value = email;
+    document.getElementById('edit_phone').value = phone;
+    document.getElementById('btn_edit_submit').formAction = "/employees/update/" + id;
     }
+
+    /*Function for delete a company and employees*/
     function deleteData(id) {
     document.getElementById('btn_delete_submit').formAction = "/dashboard/delete/"+id;
+    }
+    function deleteEmp(id) {
+    document.getElementById('btn_delete_submit_emp').formAction = "/employees/delete/"+id;
     }
 </script>
 

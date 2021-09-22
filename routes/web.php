@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmployeesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +28,7 @@ Route::post('/dashboard', [DashboardController::class, 'store']);
 Route::post('/dashboard/edit/{id}', [DashboardController::class, 'update']);
 Route::delete('/dashboard/delete/{id}', [DashboardController::class, 'destroy']);
 
-Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
-Route::post('/employees', [EmployeeController::class, 'store']);
+Route::get('/employees', [EmployeesController::class, 'index'])->name('employees');
+Route::post('/employees', [EmployeesController::class, 'store']);
+Route::post('/employees/update/{id}', [EmployeesController::class, 'update']);
+Route::delete('/employees/delete/{id}', [EmployeesController::class, 'destroy']);
