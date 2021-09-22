@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<script>
+    function deleteData(id) {
+    document.getElementById('btn_delete_submit').formAction = "/dashboard/delete/"+id;
+    }
+</script>
 
 <body>
     @auth

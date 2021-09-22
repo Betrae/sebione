@@ -16,7 +16,6 @@ class DashboardController extends Controller
     /*Return dashboard view */
     public function index() {
         return view('dashboard')->with('companies', Company::paginate(10));
-        dd('ok');
     }
 
     /*Store Company */

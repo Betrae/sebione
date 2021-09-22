@@ -32,7 +32,7 @@
                                 <i class="fa fa-edit"></i>
                             </a>
 
-                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteCompany" onclick="delete_info({{$company->id}})">
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteCompany" onclick="deleteData('{{$company->id}}')">
                                 <i class="fa fa-trash"></i>
                             </a>
                         </td>
@@ -43,10 +43,4 @@
 </div>
 @endsection
 
-@section('script')
-<script>
-    function deleteData(id) {
-    document.getElementById('btn_delete_submit').formAction = "/dashboard/delete/"+id;
-    }
-</script>
-@endsection
+
